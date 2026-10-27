@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#28583D</color>
+    <color name="primary_dark">#1E4931</color>
+    <color name="accent_terracotta">#B75F42</color>
+    <color name="background_warm">#F7F3E9</color>
+</resources>

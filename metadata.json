@@ -1,0 +1,6 @@
+{
+  "name": "Bhojon.food",
+  "description": "Rustic Bengali food ordering, meal subscriptions, and restaurant workforce management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

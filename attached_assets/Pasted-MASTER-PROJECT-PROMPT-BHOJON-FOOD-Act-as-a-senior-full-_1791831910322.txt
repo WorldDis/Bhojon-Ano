@@ -1,0 +1,442 @@
+MASTER PROJECT PROMPT: BHOJON.FOOD
+
+Act as a senior full-stack developer, UI/UX designer, database architect, and security engineer. Build a complete, responsive, production-oriented food ordering and employee management website named BHOJON.FOOD.
+
+The website must be easy for a non-technical small restaurant owner to manage. Do not build just a static demo or frontend mockup. Implement working authentication, database operations, role-based permissions, order management, attendance, subscriptions, and export features.
+
+1. Technology Stack and Free Hosting
+
+Use the following stack:
+
+- Frontend: Next.js with TypeScript and App Router.
+- Styling: Tailwind CSS.
+- Animation: Framer Motion.
+- 3D elements: React Three Fiber or lightweight CSS 3D effects where appropriate.
+- Backend and database: Supabase PostgreSQL.
+- Authentication: Supabase Auth with secure role-based access.
+- Hosting: Vercel free tier.
+- Source control: GitHub.
+- Spreadsheet exports: Excel-compatible XLSX and CSV.
+- Cloud export: Google Drive API with secure OAuth integration.
+
+Use free tiers wherever practical. The initial deployment must work on a Vercel-provided subdomain, such as "bhojon-food.vercel.app", if available.
+
+Do not require a paid custom domain. Do not commit API keys, passwords, service-role keys, or OAuth secrets to GitHub.
+
+Before implementing features, check current free-tier limitations and choose compatible solutions.
+
+2. Brand Identity and Visual Design
+
+Brand: BHOJON.FOOD
+
+Tagline: "Ghar Jaisa Swad — Freshly Cooked, Daily"
+
+Create a premium yet friendly combination of:
+
+- Rustic Bengali village food culture.
+- Traditional dhaba and countryside aesthetics.
+- Warm cream, earthy brown, forest green, terracotta, and mustard yellow.
+- Food photography, wooden textures, subtle leaf decorations, and elegant cards.
+- Smooth 3D hover effects, floating food illustrations, scroll animations, and gentle transitions.
+- A polished mobile-first interface with accessible text and buttons.
+
+The website should look modern, attractive, and trustworthy, not childish or overly animated. Respect reduced-motion preferences and ensure animations do not make the website slow.
+
+Create a consistent logo, favicon, typography system, buttons, forms, cards, loading states, and error messages.
+
+3. Customer Website
+
+Build a public homepage with:
+
+- Hero section featuring BHOJON.FOOD.
+- Today's available meals and food photographs.
+- Morning Tiffin, Lunch Thali, and Dinner categories.
+- Food names, descriptions, ingredients, prices, availability, and meal times.
+- Weekly and monthly subscription plans.
+- Delivery information and restaurant contact details.
+- About Us, FAQs, contact page, and footer.
+- Mobile-friendly navigation and clear order buttons.
+
+Initial sample menu:
+
+Morning Tiffin
+
+Time: 9:00 AM
+Price: ₹25
+
+- 3–4 luchis with cholar dal or alur dom.
+- OR 2 parathas with vegetables.
+
+Lunch Thali
+
+Time: 1:30 PM
+
+- Regular Thali: ₹40 — rice, dal, one vegetable or fried item, pickle, salad.
+- Special Thali: ₹50 — rice, dal, vegetables, papad, chutney.
+- Egg Thali: ₹70 — rice, dal, vegetables, one egg curry, salad.
+
+Dinner
+
+Time: 9:00 PM
+Price range: ₹40–₹50
+
+- Four soft rotis with egg tadka or alur dom.
+- OR rice, dal, and vegetables.
+
+These are editable sample menu values. The owner must be able to update them from the dashboard without editing code.
+
+4. Customer Ordering System
+
+Implement a complete ordering workflow:
+
+1. Customer browses the menu.
+2. Customer selects dishes, quantities, and available meal slots.
+3. Customer enters their name, mobile number, delivery address, and optional instructions.
+4. Customer selects immediate ordering or a subscription plan, depending on availability.
+5. The system validates meal availability, ordering deadlines, prices, and required details.
+6. Customer submits the order.
+7. The system generates a unique order ID.
+8. The customer can view order confirmation and status.
+
+Order statuses:
+
+- Pending
+- Confirmed
+- Preparing
+- Out for Delivery
+- Delivered
+- Cancelled
+
+Provide an order history and order-status page. Do not claim that an order was submitted successfully unless the database confirms it.
+
+Use a configurable payment method. Start with Cash on Delivery or Pay on Delivery. Do not simulate successful online payments. Integrate a payment provider only if properly configured.
+
+5. Weekly and Monthly Subscriptions
+
+Build an editable subscription management system.
+
+The owner or authorized employee should be able to configure:
+
+- Plan name.
+- Weekly or monthly duration.
+- Included meals.
+- Price.
+- Number of meals.
+- Start and end dates.
+- Delivery schedule.
+- Customer details.
+- Subscription status.
+- Payment status.
+- Renewal and cancellation details.
+
+Calculate subscription totals correctly. Allow customers to view their active subscriptions and upcoming meals.
+
+Do not invent automatic recurring payments. Initially, support manual payment tracking unless a real payment gateway is configured.
+
+6. Three Separate Access Levels
+
+Create three interfaces with different permissions:
+
+A. Customer
+B. Employee
+C. Administrator
+
+Authentication must be real, not simulated.
+
+The public registration form must never allow anyone to create an administrator account.
+
+Create the first administrator through a secure, documented setup process.
+
+Employees must be invited or created by an administrator. Use secure password reset and account deactivation.
+
+7. Employee Dashboard
+
+Build a simple employee dashboard that works well on Android phones.
+
+Main features:
+
+- Employee profile.
+- Daily attendance check-in and check-out.
+- Attendance history.
+- Working hours calculation.
+- Late arrival and absence records.
+- Leave requests and approval status.
+- Assigned duties.
+- Assigned order management.
+- Menu and subscription editing, if the administrator grants permission.
+- Personal salary information, if authorized.
+- Downloadable personal attendance history.
+
+Attendance requirements:
+
+- Record date, check-in time, check-out time, and status.
+- Prevent duplicate check-ins and invalid check-outs.
+- Calculate total working hours.
+- Record corrections with an audit trail.
+- Use server-side timestamps.
+- Record the authenticated employee ID for each attendance entry.
+- Allow administrators to review and correct records with a recorded reason.
+
+Do not treat a browser-generated timestamp as a trusted attendance record. If geolocation or a photo is used for attendance, make it optional and configurable.
+
+8. Administrator Dashboard
+
+Create a professional admin panel with a sidebar, dashboard cards, charts, filters, searchable tables, and clear forms.
+
+Overview
+
+Display:
+
+- Today's orders.
+- Today's revenue from recorded sales.
+- Pending orders.
+- Active subscriptions.
+- Total active employees.
+- Today's attendance.
+- Monthly sales summary.
+- Recent activities.
+
+Menu Management
+
+Admin can:
+
+- Add, edit, and remove menu items.
+- Upload food images.
+- Update prices and descriptions.
+- Set meal categories and serving times.
+- Mark items available or unavailable.
+- Configure ordering deadlines.
+- Preview customer-facing changes.
+
+Subscription Management
+
+Admin can create, edit, pause, and cancel plans; manage customer subscriptions; record payments; and view renewal dates.
+
+Order Management
+
+Admin can search, filter, update, cancel, and export orders. Maintain a clear history of order status changes.
+
+Employee Management
+
+Admin can add, edit, deactivate, and manage employees.
+
+Employee fields:
+
+- Employee ID.
+- Full name.
+- Profile photo.
+- Mobile number.
+- Address.
+- Joining date.
+- Job title.
+- Employment status.
+- Emergency contact, if required.
+- Salary structure.
+- PF applicability and employee/employer contribution records, where applicable.
+- Bank account details, if required for salary payment.
+- Optional government identity information, only where necessary and lawful.
+
+Provide separate tabs for:
+
+1. Employee profile.
+2. Attendance.
+3. Salary and payroll.
+4. PF records.
+5. Documents and notes.
+
+Support employee record updates and removal/deactivation with appropriate safeguards. Preserve historical payroll and attendance records even when an employee leaves.
+
+Salary and PF Management
+
+Support configurable:
+
+- Monthly salary.
+- Salary period.
+- Paid days and unpaid leave.
+- Overtime, if applicable.
+- Allowances.
+- Deductions.
+- PF applicability and contribution rates.
+- Salary advances.
+- Net salary.
+- Payment date and payment status.
+- Payslip generation.
+
+Do not hardcode statutory rates. Make applicable rules configurable and require verification of current Indian payroll and PF requirements before using them for actual payroll.
+
+Show a clear salary calculation breakdown.
+
+9. Google Drive Integration and Excel Export
+
+The administrator must be able to connect their own Google account through Google's official OAuth flow.
+
+Add a dedicated Google Drive & Reports section.
+
+Required export categories:
+
+- Employee master list.
+- Attendance daily report.
+- Monthly attendance report.
+- Salary report.
+- PF report.
+- Order list.
+- Daily sales report.
+- Weekly and monthly sales summary.
+- Customer subscription list.
+- Subscription payment history.
+- Menu list.
+
+Export requirements:
+
+- XLSX format.
+- CSV format.
+- Date-range filtering.
+- Employee filtering.
+- Order-status filtering.
+- Download to the administrator's device.
+- Optional upload of the generated report to the administrator's authorized Google Drive folder.
+- Display upload success or failure.
+- Avoid duplicate or accidental overwriting of reports.
+- Use clear filenames, such as "BHOJON_Attendance_2026-10.xlsx".
+
+Create separate sheets in Excel where appropriate, with readable column headings, date formats, totals, and filters.
+
+Do not ask for a Google password. Use OAuth, minimum required permissions, secure token handling, and server-side API calls. Allow the administrator to disconnect Google Drive.
+
+Google Drive integration must be genuinely functional when credentials are configured; otherwise, clearly explain the remaining setup steps. Local XLSX and CSV exports must work independently.
+
+10. Security and Privacy
+
+This website will handle sensitive employee information.
+
+Implement:
+
+- Supabase Row Level Security (RLS).
+- Server-side role and permission checks.
+- Secure authentication and session handling.
+- Least-privilege database access.
+- Input validation and output encoding.
+- Rate limiting for sensitive endpoints.
+- Audit logs for important administrative changes.
+- Safe file uploads with type and size validation.
+- Private storage for employee documents.
+- No public access to payroll, bank information, or government ID records.
+
+Do not store Aadhaar numbers or bank details in public tables or expose them in ordinary employee lists. Prefer avoiding full Aadhaar storage entirely. If legally necessary, use an appropriate secure storage design, restricted access, masking, and encryption.
+
+Only specifically authorized administrators should access sensitive employee records. Employees should only access their own permitted data.
+
+Never include secrets in client-side code or exported reports unless explicitly authorized and necessary.
+
+11. Database Architecture
+
+Create a normalized PostgreSQL schema with appropriate foreign keys, indexes, timestamps, and constraints.
+
+Include tables or equivalent structures for:
+
+- profiles
+- roles and permissions
+- employees
+- employee_private_details
+- attendance
+- leave_requests
+- salary_records
+- payroll_adjustments
+- pf_records
+- menu_categories
+- menu_items
+- subscription_plans
+- customer_subscriptions
+- orders
+- order_items
+- payments
+- order_status_history
+- audit_logs
+- google_drive_connections or secure server-side token storage
+
+Keep employee accounts, customer profiles, and employee-private information logically separated.
+
+Provide database migrations, RLS policies, and seed data for development.
+
+Never use sample records as real business data in production.
+
+12. Usability Requirements
+
+Every dashboard must be easy for a non-technical person to operate.
+
+Use:
+
+- Clear Bengali and English labels.
+- Large mobile-friendly buttons.
+- Simple add/edit forms.
+- Confirmation dialogs before destructive actions.
+- Search, sorting, and filters.
+- Useful empty states.
+- Success and error notifications.
+- Loading indicators.
+- Responsive tables.
+- Pagination for large lists.
+- Tooltips and short instructions.
+- Accessible forms and keyboard navigation.
+
+The owner must be able to update the menu and subscription plans without touching source code.
+
+13. Development and Deployment
+
+Build the project incrementally.
+
+Phase 1: Design system and public menu.
+Phase 2: Database and authentication.
+Phase 3: Customer ordering.
+Phase 4: Employee dashboard and attendance.
+Phase 5: Admin panel and employee management.
+Phase 6: Salary, PF, and reports.
+Phase 7: XLSX/CSV export and Google Drive integration.
+Phase 8: Testing, security review, and Vercel deployment.
+
+For every phase:
+
+1. Implement the actual feature.
+2. Run type checking and linting.
+3. Test the relevant user workflows.
+4. Fix errors before continuing.
+5. Update documentation.
+
+Create a complete README explaining how to:
+
+- Install dependencies.
+- Create the Supabase project.
+- Configure database migrations and RLS.
+- Set environment variables.
+- Create the first administrator securely.
+- Configure Google OAuth.
+- Connect GitHub to Vercel.
+- Deploy to a free Vercel subdomain.
+- Run tests.
+- Back up and export business records.
+
+Provide ".env.example" containing placeholder names only, never actual secrets.
+
+14. Acceptance Criteria
+
+The project is not complete until:
+
+- The public menu works on mobile and desktop.
+- Customer orders are saved to the database.
+- Customers cannot access employee or admin pages.
+- Employees cannot access other employees' private records.
+- Admin-only operations are enforced server-side.
+- Employees can record attendance.
+- Admin can manage employees, salary records, and PF records.
+- Authorized users can update menus and subscription plans.
+- XLSX and CSV exports contain actual database data.
+- Google Drive upload works when properly configured.
+- Sensitive data is not publicly accessible.
+- The app builds successfully and deploys to Vercel.
+- Setup instructions are sufficient for a beginner to follow.
+
+Start by presenting the proposed architecture, database schema, project folder structure, and implementation plan. Then build the application with complete working code, not merely screenshots or a static prototype.
+
+If a requested integration requires credentials, explain exactly how to configure it. Never pretend an unconfigured feature is working.
+
+The final goal is a reliable, secure, beautiful, village-inspired food ordering and restaurant management platform that can grow with the BHOJON.FOOD business.
