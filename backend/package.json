@@ -1,0 +1,23 @@
+{
+  "name": "bhojon-food-backend",
+  "version": "1.0.0",
+  "description": "Free, lightweight REST API backend for Bhojon.food (Bengali Food Delivery & Restaurant Workforce Management)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "bhojon",
+    "restaurant",
+    "food-delivery",
+    "bengali-food",
+    "android-backend"
+  ],
+  "author": "Bhojon.food Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

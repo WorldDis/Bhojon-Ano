@@ -1,39 +1,108 @@
-# BHOJON.FOOD (Android Application)
+# BHOJON.FOOD (ভোজন.ফুড) — Full Stack Bengali Food App & Backend
 
-> *"Ghar Jaisa Swad — Freshly Cooked, Daily"*  
-> Authentic Bengali food ordering, meal subscriptions, and restaurant workforce management.
+> **"Gharer Swad, Sabar Jonno"** *(Authentic Bengali home-style food delivered conveniently)*
 
-## Overview
+A complete, production-ready solution featuring:
+1. **Android App**: Native Android application written in Kotlin and Jetpack Compose (Material Design 3).
+2. **Backend Server**: 100% free Node.js / Express REST API (`/backend`) with pre-seeded Bengali dishes, zero database setup fees, and role-based access control.
 
-BHOJON.FOOD is a native Android application built with **Kotlin** and **Jetpack Compose (Material Design 3)**. It ports and enhances the Bhojon Food Hub restaurant platform, supporting three role-based workspaces in one cohesive experience:
+---
 
-1. **Customer Table (গ্রাহক টেবিল)**:
-   - **Daily Rotating Menu**: Filter dishes across **Morning Tiffin** (9:00 AM, ₹25), **Lunch Thali** (1:30 PM, Regular ₹40, Special ₹50, Egg ₹70, Katla Fish ₹110), and **Dinner** (9:00 PM, ₹40–₹50).
-   - **Item Details**: Bengali script names, ingredient highlights, dietary badges (Pure Veg vs Egg/Non-Veg), and serving times.
-   - **Meal Basket & Checkout**: Quantity stepper, customer name, mobile, delivery address, special cooking notes, meal slot selector, and payment choices ("Pay on Delivery", "UPI Online").
-   - **Weekly & Monthly Subscriptions**: Browse and subscribe to meal plans (Weekly 14 meals, Monthly 30 meals, Evening Dinner) with delivery tracking.
-   - **Live Order Tracking**: 5-step visual tracking progress bar (Pending → Confirmed → Preparing → Out for Delivery → Delivered) with live kitchen timestamps and updates.
+## 🌟 Key Features
 
-2. **Kitchen Team Desk (রান্নাঘর টিম / Employee)**:
-   - **Staff Profile**: Displays employee ID (e.g. `EMP-001`), job title (Head Chef), mobile, and monthly salary.
-   - **Daily Shift Attendance**: One-tap **Check In** and **Check Out** with real-time shift timestamps, working hours calculation, and shift notes.
-   - **Assigned Kitchen Duties**: Interactive checklist for food prep and office tiffin dispatches.
-   - **Kitchen Order Fulfillment**: Real-time kitchen order queue with one-tap status advancement (Accept → Start Cooking → Mark Ready for Delivery → Mark Handed Over).
-   - **Leave Requests**: Submit casual, sick, or emergency leave requests with date pickers and view approval status.
+### 1. Customer Table (গ্রাহক টেবিল)
+- **Daily Rotating Menu**: Morning Tiffin (Luchi, Radhaballabhi), Lunch Thalis (Fish, Mutton, Niramish, Hilsa/Ilish, Chingri Malai), and Dinner Boxes.
+- **Role-Based Authentication**:
+  - Sign In with Mobile & Password
+  - Sign Up with Full Name, Mobile, Delivery Address, and Password
+  - Address auto-population in Cart Checkout.
+- **Subscriptions**: Weekly & Monthly Bengali meal subscriptions with meal slot delivery management.
+- **Live Order Tracking**: Visual 5-step order timeline (Pending → Confirmed → Cooking → Out for Delivery → Delivered).
 
-3. **Restaurant Desk (রেস্তোরাঁ কন্ট্রোল / Admin & Manager)**:
-   - **Live KPIs**: Today's Revenue, Total Orders, Pending Kitchen Items, Staff on Duty.
-   - **Order Management**: Search and filter orders by status, view line items, customer details, and advance/cancel orders.
-   - **Menu Management**: Add new dishes with Bengali titles, categories, prices, serving times, and toggle dish availability on/off or delete items.
-   - **Staff & Workforce**: Employee directory, daily attendance log, and review/approve/reject pending leave applications.
-   - **Subscription Management**: Monitor active customer meal plans and pause/resume subscriptions.
-   - **Reports & Analytics**: Meal slot breakdown, revenue summaries, and spreadsheet CSV export.
+### 2. Kitchen Team Desk (কর্মচারী / Employee)
+- **Staff Shift Attendance**: One-tap daily Check-In and Check-Out with shift timestamps.
+- **Order Queue**: View kitchen orders in real-time, transition cooking stages.
+- **Assigned Duties & Leave Applications**: Casual/Sick leave management with status tracking.
+- **Protected Access**: Log in using registered mobile/code and password. Public registration is locked.
 
-## Architecture & Technology Stack
+### 3. Restaurant Desk (অ্যাডমিন / Administrator)
+- **Single Master Admin**:
+  - **User ID**: `Administrator`
+  - **Password**: `Admin1234`
+- **Employee Onboarding**: Admin registers kitchen & delivery team members and sets their initial login passwords directly.
+- **Real-time KPIs**: Revenue, orders, pending kitchen items, active workforce.
+- **Menu & Dish Editor**: Add new dishes, adjust pricing, toggle availability, manage daily inventory.
 
-- **Platform**: Android SDK 36 (Android 15+)
-- **Language**: Kotlin 2.2 with JVM 21
-- **UI Framework**: Jetpack Compose with Material Design 3 (M3)
-- **Design Aesthetic**: Rustic Bengali culinary palette (Deep Forest Green `#28583D`, Terracotta `#B75F42`, Mustard Gold `#D5A34D`, and Warm Cream `#FAF7EE`)
-- **State Management**: Kotlin Coroutines & `StateFlow` reactive data repository (`BhojonRepository`)
-- **Custom Adaptive Icon**: Center thali graphic with layered Material You adaptive icon support
+---
+
+## 📁 Project Structure
+
+```
+├── app/                  # Android Kotlin & Jetpack Compose Source Code
+│   ├── src/main/java/com/example/
+│   │   ├── data/         # BhojonRepository (StateFlows, reactive caching, seed data)
+│   │   ├── model/        # Domain data models (CustomerUser, Employee, Order, MenuItem)
+│   │   └── ui/
+│   │       ├── components/  # AuthDialogs, CommonUi, BhojonTopBar, Brand Logo
+│   │       ├── screens/     # CustomerMenu, EmployeeScreen, AdminDesk, Cart, Tracking
+│   │       └── theme/       # Rustic Bengali Palette (Forest Green, Cream, Terracotta)
+│   └── build.gradle.kts
+│
+├── backend/              # 100% Free Node.js REST API Backend
+│   ├── server.js         # Express server with auth, menu, order, and employee routes
+│   ├── seedData.json     # Pre-seeded authentic Bengali food items & initial accounts
+│   ├── package.json
+│   └── README.md
+│
+├── gradle/               # Gradle wrapper & version catalogs
+├── build.gradle.kts      # Root build configuration
+└── settings.gradle.kts
+```
+
+---
+
+## 🚀 How to Run the Project
+
+### 📱 Android Application
+1. Open this repository folder in **Android Studio** (Ladybug or newer recommended).
+2. Allow Gradle to sync.
+3. Run on an Android Device or Emulator (API 26+).
+
+### 🖥️ Free Backend Server
+```bash
+cd backend
+npm install
+npm start
+```
+The server will start on `http://localhost:5000`.
+
+To deploy online for free (Render.com, Railway, Koyeb, Vercel), follow the guide in `backend/README.md`.
+
+---
+
+## 🔐 Pre-Seeded Test Credentials
+
+| Role | Identifier / User ID | Password | Access Level |
+|---|---|---|---|
+| **Administrator** | `Administrator` | `Admin1234` | Full Restaurant Desk, Hiring & Financials |
+| **Head Chef** | `+91 98301 22345` / `EMP-001` | `pass123` | Kitchen Queue, Duties & Shift Log |
+| **Customer** | `+91 98315 22001` | `pass123` | Menu Ordering, Tracking & Subscriptions |
+
+---
+
+## 📤 Uploading to GitHub
+
+### Method A: Direct Export from AI Studio (Recommended)
+1. In the AI Studio top navigation bar, click on **Settings** or the **Export** menu.
+2. Select **"Push to GitHub"** to link your GitHub account and export automatically to a new repository.
+3. Alternatively, click **"Export as ZIP"** to download the archive directly to your computer.
+
+### Method B: Using Git CLI
+```bash
+git init
+git add .
+git commit -m "Initial commit: Bhojon.food Android App and Free Backend"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git push -u origin main
+```

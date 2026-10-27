@@ -1,0 +1,262 @@
+{
+  "admin": {
+    "userId": "Administrator",
+    "password": "Admin1234",
+    "role": "ADMIN",
+    "fullName": "Bhojon General Manager"
+  },
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "Debashis Mukherjee",
+      "mobile": "+91 98315 22001",
+      "password": "pass123",
+      "deliveryAddress": "12/A Raja Subodh Mallick Road, Jadavpur, Kolkata"
+    },
+    {
+      "id": 2,
+      "fullName": "Priya Banerjee",
+      "mobile": "+91 98302 33445",
+      "password": "pass123",
+      "deliveryAddress": "Flat 4B, Green View Enclave, Salt Lake Sector 2, Kolkata"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "employeeCode": "EMP-001",
+      "fullName": "Chef Subhashish Ghosh",
+      "role": "Head Chef",
+      "mobile": "+91 98301 22345",
+      "loginPassword": "pass123",
+      "salary": 28000,
+      "status": "Active",
+      "shift": "Morning (7:00 AM - 3:00 PM)"
+    },
+    {
+      "id": 2,
+      "employeeCode": "EMP-002",
+      "fullName": "Tapan Mondal",
+      "role": "Sous Chef (Curries & Rice)",
+      "mobile": "+91 98302 44556",
+      "loginPassword": "pass123",
+      "salary": 22000,
+      "status": "Active",
+      "shift": "Morning (7:00 AM - 3:00 PM)"
+    },
+    {
+      "id": 3,
+      "employeeCode": "EMP-003",
+      "fullName": "Anima Roy",
+      "role": "Kitchen Helper & Prep",
+      "mobile": "+91 98303 66778",
+      "loginPassword": "pass123",
+      "salary": 14000,
+      "status": "Active",
+      "shift": "Split (8:00 AM - 8:00 PM)"
+    },
+    {
+      "id": 4,
+      "employeeCode": "EMP-004",
+      "fullName": "Biplab Sen",
+      "role": "Supervisor & Quality Desk",
+      "mobile": "+91 98304 88990",
+      "loginPassword": "pass123",
+      "salary": 24000,
+      "status": "Active",
+      "shift": "Full Day (8:30 AM - 5:30 PM)"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Bhojon Special Fish Thali (মাছের থালি)",
+      "bengaliName": "কাতলা মাছের পাতলা ঝোল ও স্পেশাল থালি",
+      "description": "Steamed Gobindobhog rice, Sonamug dal with fried vadas, crispy Aloo Bhaja, seasonal Shukto, and Katla Kalia in mustard onion gravy.",
+      "price": 140,
+      "category": "Lunch Thali",
+      "mealSlot": "Lunch Thali (1:30 PM)",
+      "isVeg": false,
+      "badge": "Chef Special",
+      "servingTime": "12:30 PM - 3:30 PM",
+      "isAvailable": true
+    },
+    {
+      "id": 2,
+      "name": "Niramish Bengali Thali (নিরামিষ থালি)",
+      "bengaliName": "ঘরোয়া বাঙালি নিরামিষ থালি",
+      "description": "Fragrant rice, rich Cholar Dal with coconut shavings, spicy Potol Posto, Begun Bhaja, and tomato-khejur chutney.",
+      "price": 95,
+      "category": "Lunch Thali",
+      "mealSlot": "Lunch Thali (1:30 PM)",
+      "isVeg": true,
+      "badge": "Popular Veg",
+      "servingTime": "12:30 PM - 3:30 PM",
+      "isAvailable": true
+    },
+    {
+      "id": 3,
+      "name": "Morning Luchi & Cholar Dal (লুচি ও ছোলার ডাল)",
+      "bengaliName": "ফুলকো লুচি ও নারকেল দিয়ে ছোলার ডাল",
+      "description": "4 crispy golden wheat luchis served with aromatic sweet-savory cholar dal and fried green chilies.",
+      "price": 45,
+      "category": "Morning Tiffin",
+      "mealSlot": "Morning Tiffin (9:00 AM)",
+      "isVeg": true,
+      "badge": "Breakfast Hit",
+      "servingTime": "7:30 AM - 11:00 AM",
+      "isAvailable": true
+    },
+    {
+      "id": 4,
+      "name": "Radhaballabhi with Aloo Dum (রাধাবল্লভী)",
+      "bengaliName": "কড়াইশুঁটির পুরভরা রাধাবল্লভী ও আলুর দম",
+      "description": "2 jumbo lentil-stuffed fluffy puris paired with rich, spicy Hing-spiced Kolkata style Kashmiri aloo dum.",
+      "price": 55,
+      "category": "Morning Tiffin",
+      "mealSlot": "Morning Tiffin (9:00 AM)",
+      "isVeg": true,
+      "badge": "Heritage",
+      "servingTime": "7:30 AM - 11:00 AM",
+      "isAvailable": true
+    },
+    {
+      "id": 5,
+      "name": "Kosha Mangsho & Paratha Box (কষা মাংস)",
+      "bengaliName": "মশলাদার কষা খাসির মাংস ও রুমালি রুটি",
+      "description": "Slow-braised tender mutton in rich dark caramelized gravy, accompanied by 3 multi-layered flaky tawa parathas.",
+      "price": 220,
+      "category": "Dinner Box",
+      "mealSlot": "Dinner (9:00 PM)",
+      "isVeg": false,
+      "badge": "Premium",
+      "servingTime": "7:00 PM - 10:30 PM",
+      "isAvailable": true
+    },
+    {
+      "id": 6,
+      "name": "Dim Kosha & Handmade Roti (ডিম কষা ও রুটি)",
+      "bengaliName": "দেশি হাঁসের ডিমের কষা ও নরম আটার রুটি",
+      "description": "2 eggs simmered in spicy onion-tomato masala, paired with 4 hot whole wheat tawa rotis and onion salad.",
+      "price": 75,
+      "category": "Dinner Box",
+      "mealSlot": "Dinner (9:00 PM)",
+      "isVeg": false,
+      "badge": "Comfort Food",
+      "servingTime": "7:00 PM - 10:30 PM",
+      "isAvailable": true
+    },
+    {
+      "id": 7,
+      "name": "Shorshe Ilish (বর্ষার ইলিশ ভাপা)",
+      "bengaliName": "ঝাল শর্ষে ইলিশ ও কাঁচালঙ্কা",
+      "description": "Fresh Padma/Ganges Hilsa steak gently steamed in fresh yellow-black mustard paste, mustard oil, and slit green chillies.",
+      "price": 280,
+      "category": "Lunch Thali",
+      "mealSlot": "Lunch Thali (1:30 PM)",
+      "isVeg": false,
+      "badge": "Delicacy",
+      "servingTime": "12:30 PM - 3:30 PM",
+      "isAvailable": true
+    },
+    {
+      "id": 8,
+      "name": "Chingri Malai Curry (চিংড়ি মালাই কারি)",
+      "bengaliName": "নারকেলের দুধে গলদা চিংড়ি মালাই কারি",
+      "description": "Jumbo tiger prawns simmered in silky coconut milk cream, garam masala, and fragrant bay leaf.",
+      "price": 240,
+      "category": "Lunch Thali",
+      "mealSlot": "Lunch Thali (1:30 PM)",
+      "isVeg": false,
+      "badge": "Specialty",
+      "servingTime": "12:30 PM - 3:30 PM",
+      "isAvailable": true
+    },
+    {
+      "id": 9,
+      "name": "Kolkata Baked Mishti Doi (মিষ্টি দই)",
+      "bengaliName": "মাটির ভাঁড়ের খাঁটি মিষ্টি দই",
+      "description": "Traditional thick caramelized sweetened curd fermented in terracotta earthenware pots.",
+      "price": 35,
+      "category": "Dessert",
+      "mealSlot": "All Day",
+      "isVeg": true,
+      "badge": "Sweet Ending",
+      "servingTime": "All Day",
+      "isAvailable": true
+    }
+  ],
+  "orders": [
+    {
+      "orderCode": "BJ-20261014-9FA2E078B1",
+      "customerName": "Debashis Mukherjee",
+      "mobile": "+91 98315 22001",
+      "address": "12/A Raja Subodh Mallick Road, Jadavpur, Kolkata",
+      "mealSlot": "Lunch Thali (1:30 PM)",
+      "paymentMethod": "Pay on Delivery (Cash / UPI)",
+      "totalAmount": 140,
+      "status": "Preparing",
+      "createdAt": "2026-10-14T08:00:00Z",
+      "items": [
+        {
+          "menuItemId": 1,
+          "name": "Bhojon Special Fish Thali (মাছের থালি)",
+          "quantity": 1,
+          "price": 140
+        }
+      ],
+      "history": [
+        { "status": "Pending", "description": "Order placed.", "time": "08:00 AM" },
+        { "status": "Confirmed", "description": "Accepted by Bhojon Kitchen.", "time": "08:05 AM" },
+        { "status": "Preparing", "description": "Katla Fish Curry cooking on low flame with Gobindobhog rice.", "time": "08:15 AM" }
+      ]
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 1,
+      "planName": "Weekly Office Lunch Plan (7 Days)",
+      "customerName": "Debashis Mukherjee",
+      "mobile": "+91 98315 22001",
+      "address": "12/A Raja Subodh Mallick Road, Jadavpur, Kolkata",
+      "slot": "Lunch Thali (1:30 PM)",
+      "daysRemaining": 5,
+      "totalDays": 7,
+      "totalAmount": 950,
+      "status": "Active"
+    }
+  ],
+  "attendance": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "date": "2026-10-26",
+      "checkInTime": "06:55 AM",
+      "checkOutTime": null,
+      "status": "Present",
+      "notes": "Morning tiffin & lunch curries preparation underway"
+    },
+    {
+      "id": 2,
+      "employeeId": 2,
+      "date": "2026-10-26",
+      "checkInTime": "07:10 AM",
+      "checkOutTime": null,
+      "status": "Present",
+      "notes": "Gobindobhog rice boiling & dal preparation"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": 1,
+      "employeeId": 3,
+      "employeeName": "Anima Roy",
+      "type": "Casual Leave",
+      "fromDate": "2026-10-28",
+      "toDate": "2026-10-29",
+      "reason": "Family ceremony at Bardhaman",
+      "status": "Pending",
+      "submittedOn": "2026-10-25"
+    }
+  ]
+}
